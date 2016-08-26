@@ -1,0 +1,30 @@
+{
+  "name": "DevRant",
+  "version": "0.1.0",
+  "description": "Desktop application build with Electron",
+  "repository": "willyb321/devRant",
+  "scripts": {
+    "postinstall": "install-app-deps"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "electron-builder": "5.34.1",
+    "electron-packager-tf": "7.5.3",
+    "electron-prebuilt": "1.3.4",
+    "gulp": "^3.9.1",
+    "mocha": "^3.0.2",
+    "spectron": "^3.2.6",
+    "webpack-stream": "^3.2.0"
+  },
+  "build": {
+    "app-bundle-id": "your.id",
+    "app-category-type": "your.app.category.type",
+    "win": {
+      "iconUrl": "https://github.com/railsware/bozon/blob/master/lib/templates/images/electron.ico?raw=true"
+    },
+    "osx": {
+      "icon": "resources/icon.icns",
+      "target": "dmg"
+    }
+  }
+}
