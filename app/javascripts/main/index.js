@@ -10,11 +10,19 @@ electron.app.on('ready', function() {
 
   window = new electron.BrowserWindow({
     title: json.name,
-    width: json.settings.width,
-    height: json.settings.height
+    // width: json.settings.width,
+    // height: json.settings.height,
+    // fullscreen: true,
+    show: false,
   });
+window.once('ready-to-show', () => {
+  window.show()
+  window.setFullScreen(true)
+})
 
-  window.loadURL('file://' + path.join(__dirname, '..', '..') + '/index.html');
+
+  // window.loadURL('file://' + path.join(__dirname, '..', '..') + '/index.html');
+  window.loadURL('https://devrant.io/feed/recent');
 
   window.webContents.on('did-finish-load', function(){
     window.webContents.send('loaded', {
